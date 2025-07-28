@@ -302,3 +302,1772 @@ Processing by PagesController#about as HTML
 Completed 200 OK in 26ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='S3'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-07-25 21:46:04.903085', '2025-07-25 21:46:04.903087') RETURNING "key" /*application='S3'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+Migrating to CreateArticles (20250725214526)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='S3'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "articles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='S3'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250725214526') RETURNING "version" /*application='S3'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='S3'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+Started GET "/" for ::1 at 2025-07-25 17:47:55 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | GC: 0.8ms)
+Completed 200 OK in 61ms (Views: 10.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/articles" for ::1 at 2025-07-25 17:48:01 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='S3',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.0ms)
+Completed 200 OK in 57ms (Views: 1.4ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/articles/new" for ::1 at 2025-07-25 17:48:05 -0400
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 4.8ms | GC: 0.0ms)
+  Rendered articles/new.html.erb within layouts/application (Duration: 5.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.2ms)
+Completed 200 OK in 50ms (Views: 6.0ms | ActiveRecord: 0.3ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/articles/new" for ::1 at 2025-07-25 17:48:05 -0400
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.1ms)
+Completed 200 OK in 29ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started POST "/articles" for ::1 at 2025-07-25 17:49:21 -0400
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"first article", "description"=>"description of first article"}, "commit"=>"Create Article"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:27:in `block in create'
+  [1m[36mArticle Create (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at") VALUES ('first article', 'description of first article', '2025-07-25 21:49:21.941427', '2025-07-25 21:49:21.941427') RETURNING "id" /*action='create',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/articles/1
+Completed 302 Found in 30ms (ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/articles/1" for ::1 at 2025-07-25 17:49:21 -0400
+Processing by ArticlesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 1 LIMIT 1 /*action='show',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:63:in `set_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/_article.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.8ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.1ms)
+Completed 200 OK in 60ms (Views: 2.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/articles" for ::1 at 2025-07-25 17:49:31 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='S3',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.2ms)
+Completed 200 OK in 46ms (Views: 1.7ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/articles/1" for ::1 at 2025-07-25 17:49:33 -0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 1 LIMIT 1 /*action='show',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:63:in `set_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 45ms (Views: 0.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles" for ::1 at 2025-07-25 17:49:34 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='S3',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 46ms (Views: 1.5ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/new" for ::1 at 2025-07-25 17:49:37 -0400
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered articles/new.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 44ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/articles" for ::1 at 2025-07-25 17:49:50 -0400
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"second article", "description"=>"description of second article"}, "commit"=>"Create Article"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:27:in `block in create'
+  [1m[36mArticle Create (0.7ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at") VALUES ('second article', 'description of second article', '2025-07-25 21:49:50.114316', '2025-07-25 21:49:50.114316') RETURNING "id" /*action='create',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/articles/2
+Completed 302 Found in 45ms (ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/articles/2" for ::1 at 2025-07-25 17:49:50 -0400
+Processing by ArticlesController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 2 LIMIT 1 /*action='show',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:63:in `set_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 29ms (Views: 1.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles" for ::1 at 2025-07-25 17:49:51 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='S3',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 43ms (Views: 1.5ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/1" for ::1 at 2025-07-25 17:50:19 -0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 1 LIMIT 1 /*action='show',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:63:in `set_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/_article.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.0ms)
+Completed 200 OK in 44ms (Views: 2.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles" for ::1 at 2025-07-25 17:50:20 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='S3',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 1.7ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/1" for ::1 at 2025-07-25 17:50:33 -0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 1 LIMIT 1 /*action='show',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:63:in `set_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 44ms (Views: 1.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/1/edit" for ::1 at 2025-07-25 17:50:36 -0400
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 1 LIMIT 1 /*action='edit',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:63:in `set_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 42ms (Views: 1.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles" for ::1 at 2025-07-25 17:50:38 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='S3',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 43ms (Views: 1.5ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/2" for ::1 at 2025-07-25 17:50:39 -0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 2 LIMIT 1 /*action='show',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:63:in `set_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 46ms (Views: 1.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/2/edit" for ::1 at 2025-07-25 17:50:41 -0400
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 2 LIMIT 1 /*action='edit',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:63:in `set_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 45ms (Views: 1.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/articles/2" for ::1 at 2025-07-25 17:50:48 -0400
+Processing by ArticlesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"second article", "description"=>"description of second article -edited"}, "commit"=>"Update Article", "id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 2 LIMIT 1 /*action='update',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:63:in `set_article'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:40:in `block in update'
+  [1m[36mArticle Update (0.5ms)[0m  [1m[33mUPDATE "articles" SET "description" = 'description of second article -edited', "updated_at" = '2025-07-25 21:50:48.905255' WHERE "articles"."id" = 2 /*action='update',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:40:in `block in update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:40:in `block in update'
+Redirected to http://localhost:3000/articles/2
+Completed 302 Found in 50ms (ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/2" for ::1 at 2025-07-25 17:50:48 -0400
+Processing by ArticlesController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 2 LIMIT 1 /*action='show',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:63:in `set_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 0.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles" for ::1 at 2025-07-25 17:50:49 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='S3',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 1.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/new" for ::1 at 2025-07-25 17:51:01 -0400
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered articles/new.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 44ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/2" for ::1 at 2025-07-25 17:51:01 -0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 2 LIMIT 1 /*action='show',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:63:in `set_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 43ms (Views: 1.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/articles/2" for ::1 at 2025-07-25 17:51:02 -0400
+Processing by ArticlesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 2 LIMIT 1 /*action='destroy',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:63:in `set_article'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:52:in `destroy'
+  [1m[36mArticle Destroy (0.4ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = 2 /*action='destroy',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/articles
+Completed 303 See Other in 45ms (ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles" for ::1 at 2025-07-25 17:51:02 -0400
+Processing by ArticlesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='S3',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 28ms (Views: 1.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='S3'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+Migrating to AddTimestampsToArticles (20250728202159)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='S3'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "articles" ADD "created_at" datetime(6) /*application='S3'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='S3'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='S3'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+Migrating to AddTimestampsToArticles (20250728202159)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='S3'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "articles" ADD "created_at" datetime(6) /*application='S3'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='S3'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='S3'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+Migrating to AddTimestampsToArticles (20250728202159)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='S3'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "articles" ADD "created_at" datetime(6) /*application='S3'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='S3'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='S3'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+Migrating to AddTimestampsToArticles (20250728202159)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='S3'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "articles" ADD "created_at" datetime(6) /*application='S3'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='S3'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='S3'*/[0m
+  [1m[36mArticle Create (1.1ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at") VALUES ('first article', 'description', '2025-07-28 20:29:59.216222', '2025-07-28 20:29:59.216222') RETURNING "id" /*application='S3'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='S3'*/[0m
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /* loading for pp */ LIMIT 11 /*application='S3'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='S3'*/[0m
+  [1m[36mArticle Create (1.2ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at") VALUES ('second', 'sec desc', '2025-07-28 20:32:01.508300', '2025-07-28 20:32:01.508300') RETURNING "id" /*application='S3'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='S3'*/[0m
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /* loading for pp */ LIMIT 11 /*application='S3'*/[0m
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /* loading for pp */ LIMIT 11 /*application='S3'*/[0m
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /* loading for pp */ LIMIT 11 /*application='S3'*/[0m
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 2 LIMIT 1 /*application='S3'*/[0m
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 1 LIMIT 1 /*application='S3'*/[0m
+  [1m[36mArticle Load (5.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /* loading for pp */ LIMIT 11 /*application='S3'*/[0m
+Started GET "/" for ::1 at 2025-07-28 16:47:02 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250728202159_add_timestamps_to_articles.rb
+
+
+):
+  
+activerecord (8.0.2) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2025-07-28 16:47:02 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250728202159_add_timestamps_to_articles.rb
+
+
+):
+  
+activerecord (8.0.2) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/" for ::1 at 2025-07-28 16:47:53 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250728202159_add_timestamps_to_articles.rb
+
+
+):
+  
+activerecord (8.0.2) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2025-07-28 16:47:53 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250728202159_add_timestamps_to_articles.rb
+
+
+):
+  
+activerecord (8.0.2) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='S3'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+Migrating to AddTimestampsToArticles (20250728202159)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='S3'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "articles" ADD "created_at" datetime(6) /*application='S3'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='S3'*/[0m
+Started GET "/" for ::1 at 2025-07-28 16:48:24 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250728202159_add_timestamps_to_articles.rb
+
+
+):
+  
+activerecord (8.0.2) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2025-07-28 16:48:24 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250728202159_add_timestamps_to_articles.rb
+
+
+):
+  
+activerecord (8.0.2) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/" for ::1 at 2025-07-28 16:48:24 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250728202159_add_timestamps_to_articles.rb
+
+
+):
+  
+activerecord (8.0.2) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2025-07-28 16:48:24 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250728202159_add_timestamps_to_articles.rb
+
+
+):
+  
+activerecord (8.0.2) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/" for ::1 at 2025-07-28 16:48:25 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250728202159_add_timestamps_to_articles.rb
+
+
+):
+  
+activerecord (8.0.2) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2025-07-28 16:48:25 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250728202159_add_timestamps_to_articles.rb
+
+
+):
+  
+activerecord (8.0.2) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/" for ::1 at 2025-07-28 16:48:26 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250728202159_add_timestamps_to_articles.rb
+
+
+):
+  
+activerecord (8.0.2) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2025-07-28 16:48:26 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250728202159_add_timestamps_to_articles.rb
+
+
+):
+  
+activerecord (8.0.2) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='S3'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+Started GET "/" for ::1 at 2025-07-28 16:48:55 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.4ms)
+Completed 200 OK in 58ms (Views: 6.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/assets/turbo.min-3a2e143f.js" for ::1 at 2025-07-28 16:48:55 -0400
+Started GET "/assets/stimulus.min-4b1e420e.js" for ::1 at 2025-07-28 16:48:55 -0400
+Started GET "/articles" for ::1 at 2025-07-28 16:49:36 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='S3',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/_article.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/index.html.erb within layouts/application (Duration: 9.8ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | GC: 0.5ms)
+Completed 200 OK in 55ms (Views: 9.5ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/articles/new" for ::1 at 2025-07-28 16:49:43 -0400
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 3.4ms | GC: 0.2ms)
+  Rendered articles/new.html.erb within layouts/application (Duration: 4.6ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.2ms)
+Completed 200 OK in 49ms (Views: 5.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/articles/1" for ::1 at 2025-07-28 16:49:46 -0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 1 LIMIT 1 /*action='show',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:63:in `set_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 45ms (Views: 1.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/articles/2" for ::1 at 2025-07-28 16:49:54 -0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 2 LIMIT 1 /*action='show',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:63:in `set_article'
+Completed 404 Not Found in 48ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Article with 'id'=2):
+  
+app/controllers/articles_controller.rb:63:in `set_article'
+Started GET "/favicon.ico" for ::1 at 2025-07-28 16:49:54 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/articles/3" for ::1 at 2025-07-28 16:49:56 -0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 3 LIMIT 1 /*action='show',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:63:in `set_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 1.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/4" for ::1 at 2025-07-28 16:49:58 -0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 4 LIMIT 1 /*action='show',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:63:in `set_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 46ms (Views: 1.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/4" for ::1 at 2025-07-28 16:51:29 -0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mArticle Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 4 LIMIT 1 /*action='show',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:63:in `set_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/_article.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.1ms)
+Completed 200 OK in 30ms (Views: 2.5ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/articles" for ::1 at 2025-07-28 16:52:01 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='S3',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/_article.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 45ms (Views: 1.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles" for ::1 at 2025-07-28 16:59:16 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.2ms)
+Completed 200 OK in 36ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/articles" for ::1 at 2025-07-28 17:00:41 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/articles" for ::1 at 2025-07-28 17:01:25 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 26ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles" for ::1 at 2025-07-28 17:03:38 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Articles listing page</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <$ @articles.each do |article| %>
+            <tr>
+                <td><%article.title%></td>
+                <td><%article.description%></td>
+                <td>some</td>
+            </tr>
+        <%end%>
+    </tbody>
+</table>
+)
+Caused by: ActiveSupport::SyntaxErrorProxy (/Users/sukhman/Documents/Resumes/Projects/Ruby_Course/s3/app/views/articles/index.html.erb:21: syntax error, unexpected `end'
+          end
+          ^~~
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Articles listing page</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <$ @articles.each do |article| %>
+            <tr>
+                <td><%article.title%></td>
+                <td><%article.description%></td>
+                <td>some</td>
+            </tr>
+        <%end%>
+    </tbody>
+</table>
+):
+1:    <h1>Articles listing page</h1>
+2:    <table>
+3:        <thead>
+4:            <tr>
+5:                <th>Title</th>
+6:                <th>Description</th>
+7:                <th>Actions</th>
+8:            </tr>
+9:        </thead>
+10:        <tbody>
+11:            <$ @articles.each do |article| %>
+12:                <tr>
+13:                    <td><%article.title%></td>
+14:                    <td><%article.description%></td>
+15:                    <td>some</td>
+16:                </tr>
+17:            <%end%>
+18:        </tbody>
+19:    </table>
+  
+app/views/articles/index.html.erb:21: syntax error, unexpected `end'
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/Users/sukhman/Documents/Resumes/Projects/Ruby_Course/s3/app/views/articles/index.html.erb:21: syntax error, unexpected `end'
+          end
+          ^~~
+):
+  
+app/views/articles/index.html.erb:21: syntax error, unexpected `end'
+Started GET "/articles" for ::1 at 2025-07-28 17:04:16 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='S3',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | GC: 0.2ms)
+Completed 200 OK in 28ms (Views: 3.4ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/articles" for ::1 at 2025-07-28 17:05:44 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='S3',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.3ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | GC: 0.2ms)
+Completed 200 OK in 29ms (Views: 3.6ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/articles/new" for ::1 at 2025-07-28 17:05:52 -0400
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.1ms)
+Completed 200 OK in 44ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/articles/new" for ::1 at 2025-07-28 17:07:57 -0400
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>create new article</h1>
+<%= form_with scope: article, url: articles_ath, local: true do |f%>
+<%end%>
+)
+Caused by: ActiveSupport::SyntaxErrorProxy (/Users/sukhman/Documents/Resumes/Projects/Ruby_Course/s3/app/views/articles/new.html.erb:2: syntax error, unexpected ')', expecting '|'
+...rticles_ath, local: true do |f); @output_buffer.safe_append='
+...                              ^
+/Users/sukhman/Documents/Resumes/Projects/Ruby_Course/s3/app/views/articles/new.html.erb:5: syntax error, unexpected `end'
+          end
+          ^~~
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>create new article</h1>
+<%= form_with scope: article, url: articles_ath, local: true do |f%>
+<%end%>
+):
+1:    <h1>create new article</h1>
+2:    <%= form_with scope: article, url: articles_ath, local: true do |f%>
+3:    <%end%>
+  
+app/views/articles/new.html.erb:2: syntax error, unexpected ')', expecting '|'
+app/views/articles/new.html.erb:5: syntax error, unexpected `end'
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/Users/sukhman/Documents/Resumes/Projects/Ruby_Course/s3/app/views/articles/new.html.erb:2: syntax error, unexpected ')', expecting '|'
+...rticles_ath, local: true do |f); @output_buffer.safe_append='
+...                              ^
+/Users/sukhman/Documents/Resumes/Projects/Ruby_Course/s3/app/views/articles/new.html.erb:5: syntax error, unexpected `end'
+          end
+          ^~~
+):
+  
+app/views/articles/new.html.erb:2: syntax error, unexpected ')', expecting '|'
+app/views/articles/new.html.erb:5: syntax error, unexpected `end'
+Started GET "/articles/new" for ::1 at 2025-07-28 17:09:15 -0400
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article' for #<ActionView::Base:0x00000000032140>)
+Caused by: NameError (undefined local variable or method `article' for #<ActionView::Base:0x00000000032140>)
+
+Information for: ActionView::Template::Error (undefined local variable or method `article' for #<ActionView::Base:0x00000000032140>):
+    1: <h1>create new article</h1>
+    2: <%= form_with scope: article, url: articles_ath, local: true do |f| %>
+    3:     <p>
+    4:     <%= f.label :title %><br>
+    5:     <%= f.text_field :title %>
+  
+app/views/articles/new.html.erb:2
+
+Information for cause: NameError (undefined local variable or method `article' for #<ActionView::Base:0x00000000032140>):
+  
+app/views/articles/new.html.erb:2
+Started GET "/articles/new" for ::1 at 2025-07-28 17:09:29 -0400
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article' for #<ActionView::Base:0x000000000360d8>)
+Caused by: NameError (undefined local variable or method `article' for #<ActionView::Base:0x000000000360d8>)
+
+Information for: ActionView::Template::Error (undefined local variable or method `article' for #<ActionView::Base:0x000000000360d8>):
+    1: <h1>create new article</h1>
+    2: <%= form_with scope: article, url: articles_path, local: true do |f| %>
+    3:     <p>
+    4:     <%= f.label :title %><br>
+    5:     <%= f.text_field :title %>
+  
+app/views/articles/new.html.erb:2
+
+Information for cause: NameError (undefined local variable or method `article' for #<ActionView::Base:0x000000000360d8>):
+  
+app/views/articles/new.html.erb:2
+Started GET "/articles/new" for ::1 at 2025-07-28 17:09:30 -0400
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | GC: 0.2ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article' for #<ActionView::Base:0x000000000363d0>)
+Caused by: NameError (undefined local variable or method `article' for #<ActionView::Base:0x000000000363d0>)
+
+Information for: ActionView::Template::Error (undefined local variable or method `article' for #<ActionView::Base:0x000000000363d0>):
+    1: <h1>create new article</h1>
+    2: <%= form_with scope: article, url: articles_path, local: true do |f| %>
+    3:     <p>
+    4:     <%= f.label :title %><br>
+    5:     <%= f.text_field :title %>
+  
+app/views/articles/new.html.erb:2
+
+Information for cause: NameError (undefined local variable or method `article' for #<ActionView::Base:0x000000000363d0>):
+  
+app/views/articles/new.html.erb:2
+Started GET "/articles/new" for ::1 at 2025-07-28 17:09:48 -0400
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `articles' for #<ActionView::Base:0x0000000003a3b8>)
+Caused by: NameError (undefined local variable or method `articles' for #<ActionView::Base:0x0000000003a3b8>)
+
+Information for: ActionView::Template::Error (undefined local variable or method `articles' for #<ActionView::Base:0x0000000003a3b8>):
+    1: <h1>create new article</h1>
+    2: <%= form_with scope: articles, url: articles_path, local: true do |f| %>
+    3:     <p>
+    4:     <%= f.label :title %><br>
+    5:     <%= f.text_field :title %>
+  
+app/views/articles/new.html.erb:2
+
+Information for cause: NameError (undefined local variable or method `articles' for #<ActionView::Base:0x0000000003a3b8>):
+  
+app/views/articles/new.html.erb:2
+Started GET "/articles/new" for ::1 at 2025-07-28 17:13:26 -0400
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.0ms)
+Completed 200 OK in 30ms (Views: 2.6ms | ActiveRecord: 0.9ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/articles" for ::1 at 2025-07-28 17:13:28 -0400
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"", "description"=>""}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template articles/create, application/create with {:locale=>[:en], :formats=>[:turbo_stream, :html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/sukhman/Documents/Resumes/Projects/Ruby_Course/s3/app/views"
+  * "/Users/sukhman/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/turbo-rails-2.0.16/app/views"
+  * "/Users/sukhman/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actiontext-8.0.2/app/views"
+  * "/Users/sukhman/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actionmailbox-8.0.2/app/views"
+):
+  
+app/controllers/articles_controller.rb:15:in `create'
+Started GET "/articles/new" for ::1 at 2025-07-28 17:15:10 -0400
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.0ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.3ms)
+Completed 200 OK in 28ms (Views: 2.8ms | ActiveRecord: 0.7ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/articles/new" for ::1 at 2025-07-28 17:16:00 -0400
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.1ms)
+Completed 200 OK in 29ms (Views: 2.5ms | ActiveRecord: 0.6ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started POST "/articles/new" for ::1 at 2025-07-28 17:16:03 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/articles/new"):
+  
+Started GET "/articles/new" for ::1 at 2025-07-28 17:16:03 -0400
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles" for ::1 at 2025-07-28 17:16:10 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='S3',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 200 OK in 36ms (Views: 1.4ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles" for ::1 at 2025-07-28 17:16:13 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='S3',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | GC: 0.0ms)
+Completed 200 OK in 48ms (Views: 3.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/mew" for ::1 at 2025-07-28 17:16:15 -0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"mew"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = NULL LIMIT 1 /*action='show',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:3:in `show'
+Completed 404 Not Found in 43ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Article with 'id'=mew):
+  
+app/controllers/articles_controller.rb:3:in `show'
+Started GET "/articles/new" for ::1 at 2025-07-28 17:16:20 -0400
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 44ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/articles/new" for ::1 at 2025-07-28 17:16:56 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/articles/new"):
+  
+Started GET "/articles/new" for ::1 at 2025-07-28 17:16:56 -0400
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 29ms (Views: 2.6ms | ActiveRecord: 0.7ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started POST "/articles/new" for ::1 at 2025-07-28 17:17:05 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/articles/new"):
+  
+Started GET "/articles/new" for ::1 at 2025-07-28 17:17:05 -0400
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/articles" for ::1 at 2025-07-28 17:17:08 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='S3',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.8ms | GC: 2.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 3.6ms)
+Completed 200 OK in 38ms (Views: 5.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 5.5ms)
+
+
+Started GET "/articles" for ::1 at 2025-07-28 17:18:16 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='S3',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.2ms)
+Completed 200 OK in 28ms (Views: 3.8ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/articles/new" for ::1 at 2025-07-28 17:18:20 -0400
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.1ms)
+Completed 200 OK in 45ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started POST "/articles/new" for ::1 at 2025-07-28 17:18:26 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/articles/new"):
+  
+Started GET "/articles/new" for ::1 at 2025-07-28 17:18:26 -0400
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles" for ::1 at 2025-07-28 17:18:30 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='S3',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 1.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/new" for ::1 at 2025-07-28 17:18:40 -0400
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 30ms (Views: 2.6ms | ActiveRecord: 0.6ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/articles/new" for ::1 at 2025-07-28 17:18:45 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/articles/new"):
+  
+Started GET "/articles/new" for ::1 at 2025-07-28 17:18:46 -0400
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 1.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+Started GET "/articles/new" for ::1 at 2025-07-28 17:26:49 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 5.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | GC: 6.2ms)
+Completed 200 OK in 77ms (Views: 18.0ms | ActiveRecord: 0.6ms (0 queries, 0 cached) | GC: 6.2ms)
+
+
+Started POST "/articles" for ::1 at 2025-07-28 17:26:59 -0400
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"hellothistest", "description"=>"testishelloplease\n"}, "commit"=>"Save Article"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+  [1m[36mArticle Create (0.7ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at") VALUES ('hellothistest', 'testishelloplease
+', '2025-07-28 21:26:59.121330', '2025-07-28 21:26:59.121330') RETURNING "id" /*action='create',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+Redirected to http://localhost:3000/articles/5
+Completed 302 Found in 42ms (ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/articles/5" for ::1 at 2025-07-28 17:26:59 -0400
+Processing by ArticlesController#show as TURBO_STREAM
+  Parameters: {"id"=>"5"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 5 LIMIT 1 /*action='show',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.2ms)
+Completed 200 OK in 36ms (Views: 1.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/articles" for ::1 at 2025-07-28 17:27:02 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='S3',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.3ms)
+Completed 200 OK in 35ms (Views: 1.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/articles" for ::1 at 2025-07-28 17:42:13 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (2.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='S3',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 7.7ms | GC: 4.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | GC: 18.0ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 18.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `javascript_pack_tag' for #<ActionView::Base:0x00000000010c98>)
+Caused by: NoMethodError (undefined method `javascript_pack_tag' for #<ActionView::Base:0x00000000010c98>)
+
+Information for: ActionView::Template::Error (undefined method `javascript_pack_tag' for #<ActionView::Base:0x00000000010c98>):
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+    12:   <body>
+  
+app/views/layouts/application.html.erb:9
+
+Information for cause: NoMethodError (undefined method `javascript_pack_tag' for #<ActionView::Base:0x00000000010c98>):
+  
+app/views/layouts/application.html.erb:9
+Started GET "/articles" for ::1 at 2025-07-28 17:44:19 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='S3'*/[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='S3',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.4ms | GC: 0.0ms)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | GC: 8.3ms)
+Completed 200 OK in 129ms (Views: 22.4ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 8.3ms)
+
+
+Started GET "/articles/new" for ::1 at 2025-07-28 17:44:21 -0400
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 3.8ms | GC: 0.3ms)
+  Rendered articles/new.html.erb within layouts/application (Duration: 4.5ms | GC: 0.3ms)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | GC: 0.3ms)
+Completed 200 OK in 52ms (Views: 5.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/articles" for ::1 at 2025-07-28 17:44:22 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='S3',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:11
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.3ms)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.3ms)
+Completed 200 OK in 38ms (Views: 2.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/articles/1" for ::1 at 2025-07-28 17:44:23 -0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 1 LIMIT 1 /*action='show',application='S3',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:46:in `set_article'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 49ms (Views: 0.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.3ms)
+
+
